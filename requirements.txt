@@ -1,0 +1,4 @@
+xlwings
+customtkinter
+packaging
+pyinstaller
