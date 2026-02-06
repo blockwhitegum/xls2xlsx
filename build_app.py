@@ -23,11 +23,15 @@ args = [
 ]
 
 # 提示开始
-print(f"开始打包 {target_script} ...")
-print(f"CustomTkinter 路径: {ctk_path}")
-print("参数:", args)
+# 在 Windows CI 环境中，标准输出可能不支持中文，这里使用英文或确保编码安全
+try:
+    print(f"Start building {target_script} ...")
+    print(f"CustomTkinter path: {ctk_path}")
+    print("Arguments:", args)
+except Exception:
+    pass
 
 # 执行打包
 PyInstaller.__main__.run(args)
 
-print("\n打包完成！请在 'dist' 文件夹中查看生成的可执行文件。")
+print("\nBuild completed! Please check 'dist' folder.")
